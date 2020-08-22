@@ -10,10 +10,10 @@ const mongoose_1 = __importDefault(require('mongoose'));
 const cors_1 = __importDefault(require('cors'));
 const routes_1 = __importDefault(require('./routes'));
 const app = express_1.default();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.MONGODB_URL || 5000;
 app.use(cors_1.default());
 app.use(routes_1.default);
-const uri = `mongodb+srv://chase-collins:6NvArN8rJxta6b7@todo.fj6sr.mongodb.net/Todo?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@todo.fj6sr.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`;
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 mongoose_1.default.set('useFindAndModify', false);
 mongoose_1.default
