@@ -1,18 +1,33 @@
-interface TypeTodo {
-    _id: string 
-    name: string 
-    status: boolean
-    createdAt?: string 
-    updatedAt?: string
-}
+import React from 'react';
 
-interface TodoProps {
-    todo: TypeTodo
-}
+type Props = TodoProps & {
+	updateTodo: (todo: TypeTodo) => void;
+	deleteTodo: (_id: string) => void;
+};
 
-type ApiDataType = {
-    message: string
-    status: string 
-    todos: TypeTodo[]
-    todo?: TypeTodo
-}
+const Todo: React.FC<Props> = ({ todo, updateTodo, deleteTodo }) => {
+	const checkTodo: string = todo.status ? `line-through` : '';
+
+	return (
+		<div className='Card'>
+			<div className='Card--text'>
+				<h1 className={checkTodo}>{todo.name}</h1>
+				<span className={checkTodo}>{todo.description}</span>
+			</div>
+			<div className='Card--button'>
+				<button
+					onClick={() => updateTodo(todo)}
+					className={todo.status ? `hide-button` : 'Card-button__done'}
+				>
+					Complete
+				</button>
+				<button
+					onClick={() => deleteTodo(todo._id)}
+					className='Card--button__delete'
+				></button>
+			</div>
+		</div>
+	);
+};
+
+export default Todo;
