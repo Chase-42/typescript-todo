@@ -36,7 +36,7 @@ const addTodo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const allTodos = yield todo_1.default.find();
         res
             .status(201)
-            .json({ message: "Task added", todo: newTodo, todos: allTodos });
+            .json({ message: 'Todo added', todo: newTodo, todos: allTodos });
     }
     catch (error) {
         throw error;
@@ -49,9 +49,9 @@ const updateTodo = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         const updateTodo = yield todo_1.default.findByIdAndUpdate({ _id: id }, body);
         const allTodos = yield todo_1.default.find();
         res.status(200).json({
-            message: "Task updated",
+            message: 'Todo updated',
             todo: updateTodo,
-            todos: allTodos
+            todos: allTodos,
         });
     }
     catch (error) {
@@ -64,9 +64,9 @@ const deleteTodo = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         const deletedTodo = yield todo_1.default.findByIdAndRemove(req.params.id);
         const allTodos = yield todo_1.default.find();
         res.status(200).json({
-            message: "Task deleted",
+            message: 'Todo deleted',
             todo: deletedTodo,
-            todos: allTodos
+            todos: allTodos,
         });
     }
     catch (error) {

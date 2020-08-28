@@ -1,8 +1,7 @@
 {
-    "env": {
-        "MONGO_USER": "chase-collins",
-        "MONGO_PASSWORD": "6NvArN8rJxta6b7",
-        "MONGO_DB": "Todo"
-    }
+	"env": {
+		"MONGO_USER": "chase-collins",
+		"MONGO_PASSWORD": "7DrHApAXO9uliUAF",
+		"MONGO_DB": "Todo"
+	}
 }
-
