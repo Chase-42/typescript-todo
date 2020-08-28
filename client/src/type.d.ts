@@ -1,19 +1,19 @@
 interface TypeTodo {
-  _id: string
-  name: string
-  description: string
-  status: boolean
-  createdAt?: string
-  updatedAt?: string
+	_id: string;
+	name: string;
+	description: string;
+	status: boolean;
+	createdAt?: string;
+	updatedAt?: string;
 }
 
-interface TodoProps {
-  todo: TypeTodo
-}
+type TodoProps = {
+	todo: TypeTodo;
+};
 
 type ApiDataType = {
-  message: string
-  status: string
-  todos: TypeTodo[]
-  todo?: TypeTodo
-}
+	message: string;
+	status: string;
+	todos: TypeTodo[];
+	todo?: TypeTodo;
+};

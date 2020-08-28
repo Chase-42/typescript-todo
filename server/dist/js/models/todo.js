@@ -13,6 +13,6 @@ const todoSchema = new mongoose_1.Schema({
     status: {
         type: Boolean,
         required: true,
-    }
+    },
 }, { timestamps: true });
-exports.default = mongoose_1.model("Todo", todoSchema);
+exports.default = mongoose_1.model('Todo', todoSchema);
